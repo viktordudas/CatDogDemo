@@ -16,7 +16,7 @@ display(image)
 import tensorflow as tf
 import os
 import numpy as np
-gd = tf.GraphDef()
+gd = tf.compat.v1.GraphDef()
 gd.ParseFromString(open('model.pb', 'rb').read())
 tf.import_graph_def(gd, name='')
 # resize, rgb->bgr
@@ -39,3 +39,5 @@ ck = ['Cat', 'Dog'][highest_probability_index]
 display(Markdown('# ' + ck + ''))
 
 
+
+# %%
