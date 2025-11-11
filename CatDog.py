@@ -34,9 +34,9 @@ prob_tensor = sess.graph.get_tensor_by_name('loss:0')
 predictions = sess.run(prob_tensor, {'Placeholder:0': [image] })
 highest_probability_index = np.argmax(predictions)
 from IPython.display import Markdown
-ck = ['Cat', 'Dog'][highest_probability_index]
-#print(ck)
-display(Markdown('# ' + ck + ''))
+predicted_class = ['Cat', 'Dog'][highest_probability_index]
+#print(predicted_class)
+display(Markdown('# ' + predicted_class + ''))
 
 
 
